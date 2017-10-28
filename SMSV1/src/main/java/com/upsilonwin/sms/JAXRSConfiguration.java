@@ -1,4 +1,5 @@
-package com.airhacks;
+package com.upsilonwin.sms;
+
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
