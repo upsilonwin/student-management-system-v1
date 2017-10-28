@@ -11,4 +11,6 @@ import org.apache.deltaspike.data.api.Repository;
 @Repository
 public interface UserRepository extends EntityRepository<User, Long>{
     
+   User findByUsernameAndPassword(String username,String password);
+    
 }

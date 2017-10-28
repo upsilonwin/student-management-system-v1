@@ -2,6 +2,7 @@ package com.upsilonwin.sms.view.user;
 
 import com.upsilonwin.sms.business.registration.boundary.UserService;
 import com.upsilonwin.sms.business.registration.entity.User;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
@@ -32,9 +33,20 @@ public class UserView {
     @NotEmpty
     private String password;
 
-    public void createUser() {
+    public String createUser() {
         User u = userService.create(User.of(username, password));
         logger.log(Level.INFO, "User Created {0}", u.getId());
+        return "success";
+    }
+
+    public String login() {
+        User u = userService.login(username, password);
+        
+        //logger.log(Level.INFO, "User Created {0}", u.getId());
+        if(Objects.nonNull(u)){
+            return "success";
+        }
+        return null;
     }
 
     public String getUsername() {

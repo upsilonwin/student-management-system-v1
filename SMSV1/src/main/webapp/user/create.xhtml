@@ -15,7 +15,25 @@
             
             <p:password value="#{userView.password}" />
             
-            <p:commandButton action="#{userView.createUser}" value=" Create " />
+            <p:commandButton action="#{userView.login}" value="SignIn" />
+            
+            </div>
+            
+        </h:form>
+        
+        
+        
+        Create
+        ======
+        <h:form>
+            
+            <div class="container" >
+            
+            <p:inputText value="#{userView.username}" />
+            
+            <p:password value="#{userView.password}" />
+            
+            <p:commandButton action="#{userView.createUser()}" value="SignIn" />
             
             </div>
             
